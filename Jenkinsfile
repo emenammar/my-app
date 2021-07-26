@@ -20,7 +20,7 @@ pipeline {
             when{
                  expression{
                      
-               (  gv.build_fct (params.choix)  == true )
+               (params.choix)  == 'build' )
                  }
             }
             steps {
