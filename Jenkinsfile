@@ -18,7 +18,9 @@ pipeline {
         
         stage('Build') {
             when{
+                 expression{
                ( ( gv.build_fct () ) == true )
+                 }
             }
             steps {
                 echo 'building the app ... '
@@ -28,7 +30,9 @@ pipeline {
         
        stage('test') {
            when{
+                expression{
                ( ( gv.test_fct () ) == true )
+                }
             }
             steps {
                 echo 'testing the app ...'
@@ -36,7 +40,9 @@ pipeline {
        }
        stage('deploy') {
             when{
+                expression{
                ( ( gv.deploy_fct () ) == true )
+                }
             }
             steps {
                 echo 'deploying the app ...'
