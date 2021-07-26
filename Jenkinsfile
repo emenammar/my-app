@@ -20,7 +20,7 @@ pipeline {
             when{
                  expression{
                      
-               (params.choix)  == 'build' )
+               ((params.choix)  == 'build' )
                  }
             }
             steps {
