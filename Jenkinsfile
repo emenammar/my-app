@@ -19,7 +19,8 @@ pipeline {
         stage('Build') {
             when{
                  expression{
-               ( ( gv.build_fct () ) == true )
+                     
+               (  gv.build_fct ()  == true )
                  }
             }
             steps {
