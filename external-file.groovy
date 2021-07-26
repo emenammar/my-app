@@ -1,5 +1,6 @@
 def build_fct () {
-    return ( params.choix == 'build') 
+   if ( params.choix == 'build') 
+    return true
     
 } 
 
