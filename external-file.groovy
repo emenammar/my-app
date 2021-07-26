@@ -1,4 +1,4 @@
-def build_fct () {
+def build_fct (params.choix) {
    if ( params.choix == 'build') 
     return true
     
