@@ -40,6 +40,7 @@ pipeline {
             steps {
                 script {
                     gv.deployApp()
+                    echo "${params.choix}"
                 }
             }
         }
