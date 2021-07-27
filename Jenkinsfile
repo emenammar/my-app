@@ -13,6 +13,11 @@ pipeline {
             }
         }
         stage("build") {
+            when{
+                expression{
+                    params.choix == 'build'
+                }
+            }
             steps {
                 script {
                     gv.buildApp()
@@ -20,6 +25,11 @@ pipeline {
             }
         }
         stage("test") {
+            when{
+                expression{
+                    params.choix == 'test'
+                }
+            }
             steps {
                 script {
                     gv.testApp()
