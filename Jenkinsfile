@@ -8,9 +8,8 @@ pipeline {
         
         stage('Build') {
             when{
-                      expression{
-                     
-               ((params.choix)  == 'build' )
+                expression{
+                     params.choix  == "build" 
                  }
             }
             steps {
