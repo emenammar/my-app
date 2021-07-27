@@ -13,9 +13,10 @@ pipeline {
             }
         }
         stage("build") {
+            
             when{
                 expression{
-                    params.choix == '1'
+                    gv.build_orn 
                 }
             }
             steps {
