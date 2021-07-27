@@ -4,41 +4,36 @@ pipeline {
         string (name: 'choix', defaultValue:' ', description: 'choix du nom du Job ')
     }
     
-    stages{
-        
-        if (params.choix  == "build" ){
-        stage('Build') {
-            
-            steps {
-                echo 'building the app ... '
-            }
-        }
-        }
-        
-        
-       stage('test') {
-            when{
-              expression{
-                params.choix == 'test'
-               }
-            }
-           
+    stages {
+        stage("init") {
             steps {
                 script {
-                echo 'testing the app ...'
+                   gv = load "external-file.groovy" 
                 }
-            }
-       }
-       stage('deploy') {
-            when{
-                expression{
-               ( params.choix  == 'deploy' )
-                }
-            }
-            steps {
-                echo 'deploying the app ...'
             }
         }
-    }
+        stage("build") {
+            steps {
+                script {
+                    gv.buildApp()
+                }
+            }
+        }
+        stage("test") {
+           
+            }
+            steps {
+                script {
+                    gv.testApp()
+                }
+            }
+        }
+        stage("deploy") {
+            steps {
+                script {
+                    gv.deployApp()
+                }
+            }
+        }
+    }   
 }
-
