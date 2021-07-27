@@ -20,11 +20,7 @@ pipeline {
         
         
        stage('test') {
-           when{
-                expression{
-               ( params.choix == "test" )
-                }
-            }
+           
             steps {
                 script {
                 echo 'testing the app ...'
