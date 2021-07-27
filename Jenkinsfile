@@ -26,7 +26,7 @@ pipeline {
        stage('test') {
            when{
                 expression{
-               ( ( gv.test_fct () ) == true )
+               ( params.choix == 'test' )
                 }
             }
             steps {
@@ -36,7 +36,7 @@ pipeline {
        stage('deploy') {
             when{
                 expression{
-               ( ( gv.deploy_fct () ) == true )
+               ( params.choix ) == 'deploy' )
                 }
             }
             steps {
