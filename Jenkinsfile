@@ -21,7 +21,9 @@ pipeline {
         
        stage('test') {
             when{
+              expression{
                 params.choix == 'test'
+               }
             }
            
             steps {
