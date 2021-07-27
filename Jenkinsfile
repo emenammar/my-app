@@ -20,6 +20,9 @@ pipeline {
         
         
        stage('test') {
+            when{
+                params.choix == 'test'
+            }
            
             steps {
                 script {
