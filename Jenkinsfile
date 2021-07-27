@@ -6,15 +6,13 @@ pipeline {
     
     stages{
         
+        if (params.choix  == "build" ){
         stage('Build') {
-            when{
-                expression{
-                     params.choix  == "build" 
-                 }
-            }
+            
             steps {
                 echo 'building the app ... '
             }
+        }
         }
         
         
