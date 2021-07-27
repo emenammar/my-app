@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters{
-        string (name: 'choix', defaultValue:' ', description: 'choix du nom du Job ')
+        choice (name: 'choix', choices: ['1', '2', '3'], description: 'choix du nom du Job ')
     }
     
     stages {
@@ -15,7 +15,7 @@ pipeline {
         stage("build") {
             when{
                 expression{
-                    params.choix == 'build'
+                    params.choix == '1'
                 }
             }
             steps {
@@ -27,7 +27,7 @@ pipeline {
         stage("test") {
             when{
                 expression{
-                    params.choix == 'test'
+                    params.choix == '2'
                 }
             }
             steps {
