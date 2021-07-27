@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters{
-        String (name: 'choix', defaultValue:' ', description: 'choix du nom du Job ')
+        string (name: 'choix', defaultValue:' ', description: 'choix du nom du Job ')
     }
     
     stages {
