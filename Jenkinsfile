@@ -37,10 +37,14 @@ pipeline {
             }
         }
         stage("deploy") {
+            when{
+                expression{
+                    params.choix == '3'
+                }
+            }
             steps {
                 script {
                     gv.deployApp()
-                    echo "${params.choix}"
                 }
             }
         }
