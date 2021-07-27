@@ -1,16 +1,14 @@
-def build_fct (params.choix) {
-   if ( params.choix == 'build') 
-    return true
-    
+def buildApp() {
+    echo 'building the application...'
 } 
 
-def test_fct () {
-    return ( params.choix == 'test') 
-    
+def testApp() {
+    echo 'testing the application...'
 } 
 
-def deploy_fct () {
-    return ( params.choix == 'deploy') 
-    
+def deployApp() {
+    echo 'deplying the application...'
 } 
+
+return this
 
