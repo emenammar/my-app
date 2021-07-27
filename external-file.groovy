@@ -10,5 +10,12 @@ def deployApp() {
     echo 'deplying the application...'
 } 
 
+
+def build_orn(){
+    if(params.choix == '1'){
+        return true
+    }
+}
+
 return this
 
