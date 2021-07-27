@@ -7,13 +7,7 @@ pipeline {
     stages {
         
         
-          stage("init") {
-            steps {
-                script {
-                   gv = load "external-file.groovy" 
-                }
-            }
-        }
+          
 
         
         stage('Build') {
