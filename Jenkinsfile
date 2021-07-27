@@ -4,15 +4,11 @@ pipeline {
         string (name: 'choix', defaultValue:' ', description: 'choix du nom du Job ')
     }
     
-    stages {
-        
-        
-          
-
+    stages{
         
         stage('Build') {
             when{
-                 expression{
+                      expression{
                      
                ((params.choix)  == 'build' )
                  }
@@ -26,11 +22,13 @@ pipeline {
        stage('test') {
            when{
                 expression{
-               ( params.choix == 'test' )
+               ( params.choix == "test" )
                 }
             }
             steps {
+                script {
                 echo 'testing the app ...'
+                }
             }
        }
        stage('deploy') {
