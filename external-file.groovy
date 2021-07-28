@@ -12,7 +12,9 @@ def deployApp() {
 
 
 def build_orn(){
-    return params.choix == '1'
+    if params.choix == '1'{
+        this = true
+    }
 }
 
 return this
