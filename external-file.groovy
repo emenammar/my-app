@@ -11,11 +11,5 @@ def deployApp() {
 } 
 
 
-def build_orn(){
-    if ( ${params.choix} == '1'){
-        this = true
-    }
-}
-
 return this
 
