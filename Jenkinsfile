@@ -16,7 +16,7 @@ pipeline {
             
             when{
                 expression{
-                    gv.build_orn 
+                    params.choix == '2'
                 }
             }
             steps {
