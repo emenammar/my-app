@@ -16,7 +16,7 @@ pipeline {
             
             when{
                 expression{
-                    params.choix == '2'
+                    params.choix == '1'
                 }
             }
             steps {
